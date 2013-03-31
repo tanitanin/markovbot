@@ -1,0 +1,31 @@
+# coding: utf-8
+
+# Markov Chain Twitter Bot
+# Configuration File
+@app_name = "markovbot"
+
+# Daemonize
+@pid_dir = "/path_to_pid_dir/"
+
+# Logger
+@logger_file = "/path_to_var/log/debug.log"
+@logger_level = Logger::DEBUG
+
+# Twitter Consumer key and Access token
+@consumer_key        = ""
+@consumer_secret     = ""
+@access_token        = ""
+@access_token_secret = ""
+
+# MeCab Dictionary file path
+@mecab_dic_path = "/path_to_local/lib/mecab/dic/unidic/"
+
+# MongoDB
+@dbname = "markovdb"
+@collname = "markov_chain"
+
+# Need not to change.
+$env = Hash.new
+instance_variables.each do |name|
+  $env[name[1..-1].to_sym] = instance_variable_get(name)
+end
